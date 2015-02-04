@@ -141,3 +141,6 @@ _.extend($.support, {
   draganddrop: ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div),
   canvas: !!(canvas.getContext && canvas.getContext('2d'))
 })
+
+
+module.exports = $.support
