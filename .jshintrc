@@ -1,0 +1,13 @@
+{
+  "asi": true,
+  "unused": "vars",
+  "quotmark": false,
+  "mocha": true,
+  "browser": true,
+
+  "globals": {
+    "require": false,
+    "exports": false,
+    "module": false
+  }
+}
