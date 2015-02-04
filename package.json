@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  },
   "scripts": {
     "test": "totoro --runner=http://`golem ip`:5000/test/runner.html",
     "start": "golem serve"
