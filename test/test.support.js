@@ -1,8 +1,8 @@
 'use strict';
 
-var $ = require('@ali/yen')
+var $ = require('yen')
 
-require('@ali/yen-support')
+require('yen-support')
 
 
 describe('yen/support', function() {

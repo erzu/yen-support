@@ -1,8 +1,7 @@
 'use strict';
 
-var $ = require('@ali/yen')
+var $ = require('yen')
 var heredoc = require('heredoc')
-var _ = require('@ali/belt')
 
 // 修改自 Modernizr.js
 var div = document.createElement('div')
@@ -124,7 +123,7 @@ function isRetina() {
         /(iPad|iPhone|iPod)/g.test(navigator.userAgent)
 }
 
-$.support = function support(feature) {
+function support(feature) {
   switch(feature) {
     case '3d':
       return has3d()
@@ -133,14 +132,13 @@ $.support = function support(feature) {
   }
 }
 
-_.extend($.support, {
-  perspective: has('perspective'),
-  transition: has('transition'),
-  retina: isRetina(),
-  highDensity: isHighDensity(),
-  draganddrop: ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div),
-  canvas: !!(canvas.getContext && canvas.getContext('2d'))
-})
+support.perspective = has('perspective')
+support.transition = has('transition')
+support.retina = isRetina()
+support.highDensity = isHighDensity()
+support.draganddrop = ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)
+support.canvas = !!(canvas.getContext && canvas.getContext('2d'))
 
 
-module.exports = $.support
+$.support = support
+module.exports = support
